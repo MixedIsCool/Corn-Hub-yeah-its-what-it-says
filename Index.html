@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CornHub</title>
+
+<style>
+body{
+margin:0;
+background:black;
+font-family:Arial, Helvetica, sans-serif;
+color:white;
+}
+
+/* HEADER QUE SIGUE AL SCROLL */
+.header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+display:flex;
+align-items:center;
+padding:15px;
+border-bottom:3px solid purple;
+background:black;
+z-index:1000;
+}
+
+.logo{
+font-size:32px;
+font-weight:bold;
+}
+
+.logo span{
+background:purple;
+padding:4px 10px;
+margin-left:6px;
+}
+
+.search{
+flex:1;
+margin-left:40px;
+margin-right:20px;
+}
+
+.search input{
+width:100%;
+padding:10px;
+font-size:18px;
+background:purple;
+border:none;
+outline:none;
+}
+
+/* CONTENIDO */
+.container{
+padding:100px 30px 30px 30px;
+height:100vh;
+overflow-y:auto;
+}
+
+.video{
+margin:25px 0;
+}
+
+.video a{
+color:white;
+font-size:22px;
+text-decoration:none;
+background:#111;
+display:block;
+padding:20px;
+border-radius:6px;
+transition:0.2s;
+}
+
+.video a:hover{
+background:purple;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+
+<div class="logo">
+Corn <span>Hub</span>
+</div>
+
+<div class="search">
+<input id="search" placeholder="search...">
+</div>
+
+</div>
+
+<div class="container" id="videos">
+
+<div class="video" data-title="gato">
+<a href="https://www.youtube.com/watch?v=SQmkxuSZ7fA" target="_blank">😳🔥 NEW TikTok Cringe Compilation #71 - by like flow 2</a>
+</div>
+
+<div class="video" data-title="perro">
+<a href="https://https://www.youtube.com/watch?v=45DRwGnk_WM" target="_blank">TikToks Cringe that give me second hand embarrassment - by like flow 2</a>
+</div>
+
+<div class="video" data-title="javascript">
+<a href="https://www.youtube.com/watch?v=8ixVH9t9zOg&t=113s" target="_blank">Spanish Cringe Videos - by orrusu</a>
+</div>
+
+<div class="video" data-title="lofi">
+<a href="https://www.youtube.com/watch?v=_lf9UzV4jDU" target="_blank">Cringe videos - by gelan15</a>
+</div>
+
+<div class="video" data-title="minecraft">
+<a href="https://www.youtube.com/watch?v=vg5F9YM2HyQ" target="_blank">😳🔥 1 HOUR NEW TikTok Cringe Compilation #104 - by like flow 2</a>
+</div>
+
+<div class="video" data-title="python">
+<a href="https://www.youtube.com/watch?v=gQkgZL7jwi4" target="_blank">cringe tiktoks that give me second hand embarrassment - by Sidling</a>
+</div>
+
+<div class="video" data-title="musica">
+<a href="https://www.youtube.com/watch?v=q4EUQ43YmSw" target="_blank">1 HOUR TikToks Cringe that give me second hand embarrassment #128 - by like flow 2</a>
+</div>
+
+<div class="video" data-title="documental">
+<a href="https://www.youtube.com/watch?v=GeZYiSiD6Kk&t=24s" target="_blank">BOOMER REACCIONA A TIK TOKS CRINGE #2 - by Rubius Z</a>
+</div>
+
+<div class="video" data-title="tecnologia">
+<a href="https://www.youtube.com/watch?v=S1xdGHmPI74" target="_blank">TIKTOK cringe Tercermundistas para sufrir - by Tik tok cringe máximo</a>
+</div>
+
+<div class="video" data-title="gaming">
+<a href="https://www.youtube.com/watch?v=ZomRSKAieO0" target="_blank">Tiktok Cringe Hyper Comp #63 - by Jellodigger</a>
+</div>
+
+</div>
+
+<script>
+
+const search = document.getElementById("search");
+const videos = document.querySelectorAll(".video");
+
+search.addEventListener("keyup", () => {
+
+let text = search.value.toLowerCase();
+
+videos.forEach(v => {
+
+let title = v.dataset.title;
+
+if(title.includes(text)){
+v.style.display="block";
+}else{
+v.style.display="none";
+}
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
